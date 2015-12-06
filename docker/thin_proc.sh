@@ -11,15 +11,13 @@ CONFIG_PATH="${DAEMON_HOME}/thin.yml";
 cd ${DAEMON_HOME};
 source ${SCRIPT_PATH};
 SCRIPT="${GEM_HOME}/bin/bundle exec";
+PRESCRIPT="${GEM_HOME}/bin/bundle install";
 
 if [ -e newapp ]; then
-   \cp -rpf newapp/docker/database.yml /root/database.yml
-   \cp -rpf newapp/docker/thin.yml /root/thin.yml
-   \cp -rpf newapp/docker/config.ru /root/config.yml
    \cp -rpf newapp/* /root/   
-   \cp -rpf newapp/docker/* /root/
 fi
 
+${PRESCRIPT}
 ${SCRIPT} foreman start -d . -p 3002
 
 exit 0;
