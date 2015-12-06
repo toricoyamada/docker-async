@@ -12,7 +12,7 @@ cd ${DAEMON_HOME};
 source ${SCRIPT_PATH};
 SCRIPT="${GEM_HOME}/bin/bundle exec";
 
-${SCRIPT} foreman start -d . -p 3002
+${SCRIPT} foreman start -d . -p 3000
 
 exit 0;
 

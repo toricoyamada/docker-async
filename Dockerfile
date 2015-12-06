@@ -49,7 +49,7 @@ ADD docker/Gemfile      /root/
 RUN bash -l -c "bundle install"
 
 # start thin server as entrypoint.
-EXPOSE 3002
+EXPOSE 3000
 ADD docker/thin_proc.sh /root/thin_proc.sh
 RUN chmod +x /root/thin_proc.sh
 CMD /root/thin_proc.sh
